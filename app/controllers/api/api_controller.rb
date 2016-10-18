@@ -1,6 +1,5 @@
 class Api::ApiController < ApplicationController
   include DeviseTokenAuth::Concerns::SetUserByToken
-  protect_from_forgery with: :exception, only: Proc.new { |c| c.request.format.json? }
 
   protected
 
