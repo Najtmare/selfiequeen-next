@@ -24,6 +24,15 @@ Rails.application.routes.draw do
     end
 
     resources :photos
+    resources :ratings, only: [:create, :destroy, :update]
+    resources :users, only: [:show]
+    
+    get '/me', to: 'me#index'
+    put '/me/update', to: 'me#update'
+    
+    post '/register', to: 'facebook#create'
+
+    get '/leaders', to: 'leaderboard#index'
   end
 
   namespace :admin do
