@@ -1,0 +1,10 @@
+<% @photos.each do |photo| %>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="<%= edit_admin_photo_path(photo) %>">
+      <img src="<%= photo.image_url %>" width="200px" height="200px">
+    </a>
+  </div>
+</div>
+<% end %>

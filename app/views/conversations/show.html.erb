@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h3>Conversation Messages</h3>
+</div>
+
+<% @message_days.each do |date, messages| %>
+
+  <div class="message-date"><%= date %></div>
+
+  <% messages.each do |message| %>
+  <ul class="media-list media-list-conversation">
+    <li class="media media-current-user">
+      <a class="media-left" href="#">
+        <img class="img-circle media-object" src="<%= message.user.avatar.try(:url) %>" height="34px" width="33px">
+      </a>
+      <div class="media-body">
+        <div class="media-body-text">
+          <%= message.content %>
+        </div>
+        <div class="media-footer">
+          <small class="text-muted">
+            <a href="#"><%= message.user.email %></a> at <%= message.created_at.strftime('%H:%M') %>
+          </small>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <% end %>
+<% end %>
+
+<%= render 'messages/form' %>

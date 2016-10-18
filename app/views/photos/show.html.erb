@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title" style="text-align: center"><%= @photo.title %></h1>
+  </div>
+  <div class="panel-body">
+    <img class="center-block" src="<%= @photo.image.url %>" width="1000px" height="500px">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <select class="center-block" id="photo-rating" data-current-rating="<%= @photo.average_rating %>">
+      <option value="1"><%= @photo.id %></option>
+      <option value="2"><%= @photo.id %></option>
+      <option value="3"><%= @photo.id %></option>
+      <option value="4"><%= @photo.id %></option>
+      <option value="5"><%= @photo.id %></option>
+    </select>
+  </div>
+    
+  <p class="pull-right">by <%= link_to "#{@photo.user.name || @photo.user.email}", user_path(@photo.user) %></p>
+</div>

@@ -1,0 +1,9 @@
+<div class="row">
+  <% @photos.each do |photo| %>
+    <div class="photo-content">
+      <a href="<%= photo_path(photo) %>" class="thumbnail">
+        <img src="<%= photo.image.url %>">
+      </a>
+    </div>
+  <% end %>
+</div>

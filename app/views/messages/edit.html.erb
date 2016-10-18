@@ -1,0 +1,6 @@
+<h1>Editing Message</h1>
+
+<%= render 'form', message: @message %>
+
+<%= link_to 'Show', conversation_message_path(@conversation, @message) %> |
+<%= link_to 'Back', conversation_messages_path(@conversation) %>

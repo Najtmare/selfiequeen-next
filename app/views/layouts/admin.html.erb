@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SelfiequeenNew</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li class="<%= nav_active_class(:photo) %>"><%= link_to 'Photos', admin_photos_path %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= render 'layouts/flashes' %>
+      
+      <%= yield %>
+    </div>
+  </body>
+</html>

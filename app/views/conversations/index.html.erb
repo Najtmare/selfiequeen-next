@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h3>Latest Conversations</h3>
+</div>
+
+<% @conversations.each do |conversation| %>
+<div class="list-group">
+  <a class="list-group-item" href="<%= conversation_path(conversation) %>">
+    <div class="media">
+      <div class="media-left">
+        <img class="media-object" src="<%= conversation.sender.avatar_url %>" height="64px" width="64px">
+      </div>
+      <div class="media-body">
+        <div class="media-content"><%= conversation.messages.last.try(:content) %></div>
+      </div>
+    </div>
+  </a>
+</div>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h3><%= @user.name || @user.email %> <small><%= link_to 'Start a conversation', new_conversation_path(recipient: params[:id]) %></small></h3>
+</div>
+<% @user.photos.each do |photo| %>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#">
+      <img src="<%= photo.image_url %>" width="200px" height="200px">
+    </a>
+  </div>
+</div>
+<% end %>
