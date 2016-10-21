@@ -5,7 +5,12 @@ class Admin::PhotosController < Admin::ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.pending
+    case params[:state]
+    when 'approved' then @photos = Photo.approved_status
+    when 'denied' then @photos = Photo.denied_status
+    else
+      @photos = Photo.pending_status
+    end
   end
 
   # GET /photos/1/edit

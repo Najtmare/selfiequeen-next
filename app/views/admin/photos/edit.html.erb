@@ -10,4 +10,6 @@
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+
+  <%= button_to 'Delete', admin_photo_path(@photo), method: :delete, class: 'btn btn-danger' %>
 <% end %>

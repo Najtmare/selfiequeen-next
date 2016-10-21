@@ -1,3 +1,9 @@
+<ul class="nav nav-pills">
+  <li role="presentation"><%= link_to 'Approved', admin_photos_path(state: 'approved') %></li>
+  <li role="presentation"><%= link_to 'Denied', admin_photos_path(state: 'denied') %></li>
+  <li role="presentation"><%= link_to 'Pending', admin_photos_path(state: 'pending') %></li>
+</ul>
+
 <% @photos.each do |photo| %>
 
 <div class="row">

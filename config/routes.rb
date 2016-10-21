@@ -33,6 +33,10 @@ Rails.application.routes.draw do
     post '/register', to: 'facebook#create'
 
     get '/leaders', to: 'leaderboard#index'
+
+    namespace :admin do
+      resources :photos
+    end
   end
 
   namespace :admin do
