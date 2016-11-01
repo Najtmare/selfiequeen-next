@@ -1,4 +1,4 @@
-class Api::Admin::PhotosController < Api::ApplicationController
+class Api::Admin::PhotosController < Api::ApiController
   before_action :set_photo, only: [:show, :update, :destroy]
 
   # GET /photos
