@@ -5,7 +5,7 @@ class Photo < ApplicationRecord
 
   enum status: [ :pending, :approved, :denied ]
 
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 
   validates :title, presence: true
   validates :image, presence: true
