@@ -1,5 +1,7 @@
 class MessageSerializer < ActiveModel::Serializer
-  attributes :id, :content
-  has_one :user
-  has_one :conversation
+  attributes :id, :content, :sender
+
+  def sender
+    ActiveModelSerializers::SerializableResource.new(object.user)
+  end
 end
