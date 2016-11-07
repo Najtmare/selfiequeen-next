@@ -5,7 +5,7 @@ class Api::ConversationsController < Api::ApiController
 
   # GET /conversations
   def index
-    @conversations = Conversation.all
+    @conversations = Conversation.includes(:sender, :recipient).all
 
     render json: @conversations
   end
