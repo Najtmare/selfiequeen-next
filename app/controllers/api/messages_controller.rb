@@ -2,7 +2,7 @@ class Api::MessagesController < Api::ApiController
   before_action :authenticate_user!
   before_action :find_message, only: [:update, :show, :destroy]
   before_action :find_conversation, only: [:create]
-  after_action  :verify_authorized
+  after_action  :verify_authorized, only: [:update, :destroy]
 
   def index
   end
