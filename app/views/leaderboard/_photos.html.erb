@@ -1,0 +1,43 @@
+<div class="col-sm-4 selfie-item">
+    <a href="#selfieModal<%= photo.id %>" class="selfie-link" data-toggle="modal">
+        <div class="caption">
+            <div class="caption-content">
+                <p>by <%= photo.user.email %></p>
+            </div>
+        </div>
+        <img src="<%= photo.image %>" class="img-responsive" alt="">
+    </a>
+</div>
+
+<div class="selfie-modal modal fade" id="selfieModal<%= photo.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+        
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2><%= photo.title %></h2>
+                            <hr>
+                            <img src="<%= photo.image %>" class="img-responsive img-centered" alt="">
+                            <p>
+                            <span id="photo-info" data-photo-id="<%= photo.id %>"></span>
+                            <select class="center-block" id="photo-rating-<%= photo.id %>" data-current-rating="<%= photo.average_rating %>">
+                              <option value="1"><%= photo.id %></option>
+                              <option value="2"><%= photo.id %></option>
+                              <option value="3"><%= photo.id %></option>
+                              <option value="4"><%= photo.id %></option>
+                              <option value="5"><%= photo.id %></option>
+                            </select> 
+                            </p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>

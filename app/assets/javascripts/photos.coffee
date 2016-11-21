@@ -1,8 +1,9 @@
 $(document).on "turbolinks:load", ->
 
-  currentRating = $('#photo-rating').data('current-rating')
+  photoId = $('#photo-info').data('photo-id')
+  currentRating = $('#photo-rating-' + photoId).data('current-rating')
 
-  $('#photo-rating').barrating 'show',
+  $('#photo-rating-' + photoId).barrating 'show',
     theme: 'bootstrap-stars'
     initialRating: currentRating
     onSelect: (value, text, event) ->

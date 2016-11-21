@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
   # GET /conversations
   # GET /conversations.json
   def index
-    @conversations = Conversation.latest
+    @conversations = current_user.conversations.latest
   end
 
   # GET /conversations/1

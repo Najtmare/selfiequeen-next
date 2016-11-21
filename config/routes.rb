@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :photos
 
     resources :users, only: [:show]
+
+    get :leaderboard, to: 'leaderboard#index'
   end
   root to: redirect('/users/sign_in')
 

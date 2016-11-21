@@ -1,0 +1,13 @@
+<section id="selfie">
+  <div class="container">
+    <div class="row">
+    </div>
+    <div class="row">
+      <% @leaders.includes(:photos).each do |leader| %>
+        <% leader.photos.each do |photo| %>
+          <%= render partial: 'photos', locals: {photo: photo} %>
+        <% end %>
+      <% end %> 
+    </div>
+  </div>
+</section>

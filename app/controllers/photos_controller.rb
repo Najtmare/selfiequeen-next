@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.approved_status
+    @photos = Photo.all
   end
 
   # GET /photos/1

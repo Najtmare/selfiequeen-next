@@ -1,6 +1,8 @@
 class Photo < ApplicationRecord
   mount_uploader :image, ImageUploader
 
+  include ActionView::Helpers::DateHelper
+
   belongs_to :user
 
   enum status: [ :pending, :approved, :denied ]
@@ -37,5 +39,9 @@ class Photo < ApplicationRecord
 
   def self.statuses
     %w(pending approved denied)
+  end
+
+  def time_ago
+    "#{distance_of_time_in_words_to_now(created_at)} ago"
   end
 end

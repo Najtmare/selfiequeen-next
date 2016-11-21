@@ -9,13 +9,14 @@
 
 <div class="row">
   <div class="col-md-3">
-    <select class="center-block" id="photo-rating" data-current-rating="<%= @photo.average_rating %>">
+    <span id="photo-info" data-photo-id="<%= @photo.id %>"></span>
+    <select class="center-block" id="photo-rating-<%= @photo.id %>" data-current-rating="<%= @photo.average_rating %>">
       <option value="1"><%= @photo.id %></option>
       <option value="2"><%= @photo.id %></option>
       <option value="3"><%= @photo.id %></option>
       <option value="4"><%= @photo.id %></option>
       <option value="5"><%= @photo.id %></option>
-    </select>
+    </select> 
   </div>
     
   <p class="pull-right">by <%= link_to "#{@photo.user.name || @photo.user.email}", user_path(@photo.user) %></p>
